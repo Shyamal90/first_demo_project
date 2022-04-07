@@ -18,7 +18,7 @@ export const userReducer = (state = initialState, action) => {
 
              return {
              
-                todoList : [newList]
+                todoList : [...newList]
         }
 
 
