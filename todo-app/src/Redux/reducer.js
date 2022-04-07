@@ -23,17 +23,18 @@ export const userReducer = (state = initialState, action) => {
 
 
         case "EDIT_TODO" : 
+             console.log("edit item ",action.payload)
              const updatedList = state.todoList.map((item) => {
                  if(item.id === action.payload.id){
-                     item.name = action.payload.name;
-                     return item;
+                     
+                     return {...item,name: action.payload.name};
                  }
 
                  return item;
              })
 
              return {
-                 todoList: [updatedList]
+                 todoList: [...updatedList]
              }
 
 
